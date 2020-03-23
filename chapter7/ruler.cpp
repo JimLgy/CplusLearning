@@ -3,9 +3,10 @@
 const int Len = 66;
 const int Divs = 6;
 void subdivide(char ar[], int low, int high, int level);
+
 int main()
 {
-	using namespace std;
+	// using namespace std;
 	char ruler[Len];
 	int i;
 	for (i = 1; i < Len - 2; i++)
@@ -14,12 +15,12 @@ int main()
 	int max = Len - 2;
 	int min = 0;
 	ruler[min] = ruler[max] = '|';
-	cout << ruler << endl;
+	std::cout << ruler << std::endl;
 	for (i = 1; i <= Divs; i++)
 	{
 		subdivide(ruler, min, max, i);
-		cout << ruler << endl;
-		for (int j = 1; i < Len - 2; j++)
+	        std::cout << ruler << std::endl;
+		for (int j = 1; j < Len - 2; j++)
 			ruler[j] = ' ';			// reset to blank ruler
 	}
 	return 0;
